@@ -1,0 +1,26 @@
+specVersion: 0.0.2
+description: Gravatar for Ethereum
+repository: https://github.com/0cv/thegraphdemo
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Game
+    network: rinkeby
+    source:
+      address: "0x17c5DfcA80f6322e4FC0E4939F5fe008E4113E8d"
+      abi: Game
+      startBlock: 10093494
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Game
+      abis:
+        - name: Game
+          file: Game/abis/Game.json
+      eventHandlers:
+        - event: BetPlaced(address,uint256,bool)
+          handler: handleNewBet
+      file: Game/Game.wasm

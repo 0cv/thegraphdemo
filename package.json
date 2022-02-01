@@ -1,0 +1,21 @@
+{
+  "name": "thegraphdemo",
+  "version": "0.1.0",
+  "repository": "https://github.com/0cv/thegraphdemo",
+  "license": "MIT",
+  "scripts": {
+    "build-contract": "solcjs contracts/Game.sol --abi -o abis --overwrite && solcjs contracts/Game.sol --bin -o bin --overwrite",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "auth": "graph auth --studio XXXXXXXXX",
+    "deploy": "graph deploy --studio demo"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.23.2",
+    "@graphprotocol/graph-ts": "^0.23.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0"
+  }
+}
